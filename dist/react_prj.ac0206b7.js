@@ -103,9 +103,60 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"index.js":[function(require,module,exports) {
-console.log("hello world!");
-},{}],"../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+})({"src/mathModule.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Nums = exports.Nums = function () {
+    function Nums(x, y) {
+        _classCallCheck(this, Nums);
+
+        this.x = x;
+        this.y = y;
+    }
+
+    _createClass(Nums, [{
+        key: "plus",
+        value: function plus() {
+            return this.x + this.y;
+        }
+    }, {
+        key: "minus",
+        value: function minus() {
+            return this.x - this.y;
+        }
+    }, {
+        key: "mult",
+        value: function mult() {
+            return this.x * this.y;
+        }
+    }, {
+        key: "div",
+        value: function div() {
+            return this.x / this.y;
+        }
+    }]);
+
+    return Nums;
+}();
+},{}],"index.js":[function(require,module,exports) {
+'use strict';
+
+var _mathModule = require('./src/mathModule');
+
+var nums = new _mathModule.Nums(6, 3);
+console.log('6 + 3 = ' + nums.plus());
+console.log('6 - 3 = ' + nums.minus());
+console.log('6 * 3 = ' + nums.mult());
+console.log('6 / 3 = ' + nums.div());
+},{"./src/mathModule":"src/mathModule.js"}],"../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -134,7 +185,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '42779' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '45046' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
