@@ -1,17 +1,21 @@
-import { Nums } from './src/mathModule';
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Hello from './src/Hello';
+
+import { products_array } from './constants/Products';
+import Catalog from './src/Catalog';
 
 
-let nums = new Nums(6, 3);
-console.log(`6 + 3 = ${nums.plus()}`);
-console.log(`6 - 3 = ${nums.minus()}`);
-console.log(`6 * 3 = ${nums.mult()}`);
-console.log(`6 / 3 = ${nums.div()}`);
+
+class App extends Component {
+    render() {
+        return(
+            <Catalog products={products_array}/>
+        )
+    }
+}
 
 
 ReactDOM.render(
-    <Hello />,
+    <App />,
     document.getElementById('root')
 )
