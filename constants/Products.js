@@ -1,4 +1,4 @@
-export let products_array = [
+export let productsArray = [
     {
         id: 1,
         title: 'Tomato',

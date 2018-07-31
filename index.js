@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import { products_array } from './constants/Products';
+import { productsArray } from './constants/Products';
 import Catalog from './src/Catalog';
 
 
@@ -9,7 +9,7 @@ import Catalog from './src/Catalog';
 class App extends Component {
     render() {
         return(
-            <Catalog products={products_array}/>
+            <Catalog products={ productsArray }/>
         )
     }
 }

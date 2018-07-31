@@ -7,8 +7,8 @@ export default class Catalog extends Component {
             <div>
                 {   
                     this.props.products.map(
-                        ({id, title, price, imageUrl}) => <ProductCard id={id} title={title} price={price} imageUrl={imageUrl}/>
-                    )
+                        (product) => <ProductCard product={ product } key={ product.id } />
+                    )   
                 }
             </div>
         )

@@ -5,14 +5,13 @@ import Price from './Price';
 
 export default class ProductCard extends Component {
     render() {
-        let source = this.props.imageUrl;
-        let {id, title, price, imageUrl} = this.props;
+        const { product } = this.props;
         return(
             <div>
-                <Image src={imageUrl} alt='PICTURE' height='150' width='300'/>
+                <Image src={ product.imageUrl } alt={ product.title } height='150' width='300'/>
                 <br/>
-                <TextBox>{title}</TextBox>
-                <Price>{price}</Price>
+                <TextBox>{ product.title }</TextBox>
+                <Price>{ product.price }</Price>
             </div>
         )
     }
