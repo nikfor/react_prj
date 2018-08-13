@@ -1,18 +1,10 @@
-import React, { Component } from 'react';
+import './foundation.css';
+import './main.css';
+
+
 import ReactDOM from 'react-dom';
-
-import { productsArray } from './constants/Products';
-import Catalog from './src/Catalog';
-
-
-
-class App extends Component {
-    render() {
-        return(
-            <Catalog products={ productsArray }/>
-        )
-    }
-}
+import React, { Component } from 'react';
+import App from './src/containers/App.js'
 
 
 ReactDOM.render(
