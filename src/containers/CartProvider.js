@@ -12,7 +12,7 @@ export default class CartProvider extends Component {
     }
 
     addToCart(newProduct, count = 1) {
-        const { products } = this.state;
+        const products = this.state.products.slice();
 
         if (products.some( (product) => (product.id == newProduct.id) )){
             products.find((product) => (product.id == newProduct.id)).count += count;
